@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles - Saludable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(70deg, rgb(248, 229, 201), rgb(248, 197, 139));
+            font-family: Arial, sans-serif;
+        }
+        .contenedor-principal {
+            display: grid;
+            grid-template-columns: 1fr;
+            width: 90vw;
+            height: 90vh;
+        }
+        @media (min-width: 640px) {
+            .contenedor-principal {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .contenedor-principal {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .tarjeta-alimento {
+            border: 3px solid black;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+        }
+        .hover-box {
+            position: relative;
+            width: 100%;
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .hover-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out;
+            z-index: 1;
+        }
+        .hover-box .img-hover {
+            opacity: 0;
+        }
+        .tarjeta-alimento:hover .img-hover {
+            opacity: 1;
+        }
+        .tarjeta-alimento:hover .img-inicial {
+            opacity: 0;
+        }
+        .tabla-overlay {
+            position: relative;
+            z-index: 2; 
+            width: 85%;
+            height: 70%;
+            border-collapse: collapse;
+            text-align: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 1s ease-in-out, color 1s ease-in-out, border-color 1s ease-in-out;
+        }
+        .tabla-overlay td {
+            border: 2px solid currentColor;
+            padding: 5px;
+            transition: border-color 1s ease-in-out;
+        }
+        .arandanos .tabla-overlay {
+            background-color: rgba(255, 255, 255, 0.65);
+            color: #1a365d;
+        }
+        .arandanos:hover .tabla-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #90cdf4;
+        }
+        .palta .tabla-overlay {
+            background-color: rgba(255, 255, 255, 0.65);
+            color: #1c4532;
+        }
+        .palta:hover .tabla-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #9ae6b4;
+        }
+        .secos .tabla-overlay {
+            background-color: rgba(255, 255, 255, 0.65);
+            color: #4a2c11;
+        }
+        .secos:hover .tabla-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fbd38d;
+        }
+        .mangos .tabla-overlay {
+            background-color: rgba(255, 255, 255, 0.65);
+            color: #7b341e;
+        }
+        .mangos:hover .tabla-overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fbd38d;
+        }
+
+        h1 {
+            padding: 10px 0;
+            z-index: 2;
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-principal">
+        <div class="tarjeta-alimento arandanos">
+            <div class="hover-box">
+                <img class="img-inicial" src="img/azulclaro.jpeg" alt="Arándanos Claro">
+                <img class="img-hover" src="img/azuloscuro.jpeg" alt="Arándanos Oscuro">
+                <table class="tabla-overlay">
+                    <tr>
+                        <td>PRECIO</td>
+                        <td>15bs</td>
+                        <td>10bs</td>
+                    </tr>
+                    <tr>
+                        <td>Arandanos</td>
+                        <td>Grandes</td>
+                        <td>Pequeños</td>
+                    </tr>
+                </table>
+            </div>
+            <center><h1>ARANDANOS</h1></center>
+        </div>
+        <div class="tarjeta-alimento palta">
+            <div class="hover-box">
+                <img class="img-inicial" src="img/verdeclaro.jpeg" alt="Palta Claro">
+                <img class="img-hover" src="img/verdeoscuro.jpeg" alt="Palta Oscuro">
+                <table class="tabla-overlay">
+                    <tr>
+                        <td>PRECIO</td>
+                        <td>Caja completa</td>
+                        <td>A kilo</td>
+                    </tr>
+                    <tr>
+                        <td>Tamaño</td>
+                        <td>Grandes</td>
+                        <td>Pequeños</td>
+                    </tr>
+                </table>
+            </div>
+            <center><h1>PALTA/AGUACATE</h1></center>
+        </div>
+        <div class="tarjeta-alimento secos">
+            <div class="hover-box">
+                <img class="img-inicial" src="img/cafeclaro.jpeg" alt="Alimentos Secos Claro">
+                <img class="img-hover" src="img/cafeoscuro.jpeg" alt="Alimentos Secos Oscuro">
+                <table class="tabla-overlay">
+                    <tr>
+                        <td>PRECIO</td>
+                        <td>15bs</td>
+                        <td>12bs</td>
+                    </tr>
+                    <tr>
+                        <td>Mezcla</td>
+                        <td>Con frutas deshidratadas</td>
+                        <td>Solo frutos secos</td>
+                    </tr>
+                    <tr>
+                </table>
+            </div>
+            <center><h1>ALIMENTOS SECOS</h1></center>
+        </div>
+        <div class="tarjeta-alimento mangos">
+            <div class="hover-box">
+                <img class="img-inicial" src="img/naranjaclaro.jpeg" alt="Mangos Claro">
+                <img class="img-hover" src="img/naranjaoscuro.jpeg" alt="Mangos Oscuro">
+                <table class="tabla-overlay">
+                    <tr>
+                        <td>PRECIO</td>
+                        <td>Caja completa</td>
+                        <td>A kilo</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo</td>
+                        <td>Maduros</td>
+                        <td>Inmaduros</td>
+                    </tr>
+                </table>
+            </div>
+            <center><h1>MANGOS</h1></center>
+        </div>
+    </div>
+</body>
+</html>

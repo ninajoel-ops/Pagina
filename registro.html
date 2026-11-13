@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registro - Saludable</title>
+</head>
+<body class="registro-body">
+    <main class="registro-container">
+        <h2>Formulario de Registro</h2>
+        <form method="post" class="registro-form" id="miFormulario">
+            <fieldset>
+                <div class="form-group">
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" placeholder="Nombre..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Apellido:</label>
+                    <input type="text" name="apellido" placeholder="Apellido..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Número:</label>
+                    <input type="tel" name="numero" placeholder="Número..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Correo:</label>
+                    <input type="email" name="email" placeholder="Email..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Ubicación:</label>
+                    <select name="ubicacion">
+                        <option value="">Seleccione:</option>
+                        <option value="lapaz">La Paz</option>
+                        <option value="cochabamba">Cochabamba</option>
+                        <option value="santacruz">Santa Cruz</option>
+                        <option value="oruro">Oruro</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Comentario:</label>
+                    <textarea placeholder="Escriba su comentario"></textarea>
+                </div>
+
+                <div class="form-links">
+                    <center>
+                    <a href="index.html">¿Ya estás registrado?</a>
+                    </center>
+                </div>
+
+                <button type="submit" name="Enviar" class="btn-enviar">Enviar</button>
+            </fieldset>
+        </form>
+    </main>	
+    <script>
+        document.getElementById("miFormulario")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+                alert("Datos enviados correctamente");
+
+                this.reset();
+            });
+    </script>
+</body>
+</html>

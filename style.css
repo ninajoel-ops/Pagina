@@ -1,0 +1,285 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #FDFBF7;
+	font-family: Arial, sans-serif;
+	color: #2c3e50;
+}
+header {
+	background-color: #2C4A3E;
+	padding: 10px 20px;
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+.logos img {
+	height: 50px;
+	width: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	transition: all 0.5s ease;
+}
+.logos img:hover {
+	transform: scale(1.2);
+	box-shadow: 0 0 10px rgb(36, 240, 29);
+}
+.nav-links {
+	list-style: none;
+	display: flex;
+	align-items: center;
+}
+.nav-links a {
+	display: block;
+	text-decoration: none;
+	padding: 10px 15px;
+	color: white;
+	font-weight: bold;
+}
+.nav-links > li {
+	position: relative;
+}
+.nav-links > li > a:hover {
+	background-color: rgb(142, 197, 13);
+	color: white;
+	border-radius: 8px;
+}
+.menu-desplegable {
+	position: absolute;
+	left: 0;
+	top: 100%;
+	background-color: rgb(108, 250, 95);
+	list-style: none;
+	min-width: 150px;
+	border-radius: 5px;
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+	box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+.menu-desplegable li a {
+	color: #0b3c1d;
+	padding: 10px 15px;
+}
+.menu-desplegable li a:hover {
+	background-color: rgb(142, 197, 13);
+	color: white;
+}
+
+.desplegable:hover .menu-desplegable {
+	opacity: 1;
+	visibility: visible;
+}
+.main-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+h2 {
+	text-align: center;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 2.5rem;
+	margin: 20px 0;
+	color: #2C4A3E;
+}
+.intro-text {
+	text-align: center;
+	padding: 10px 20px 30px 20px;
+	font-size: 1.1rem;
+	line-height: 1.6;
+}
+.cards-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: center;
+}
+.card {
+	background-color: greenyellow;
+	width: 23%;
+	min-width: 250px;
+	border: 2px solid #dddddd;
+	border-radius: 10px;
+	overflow: hidden;
+	box-shadow: 0 10px 15px rgba(0, 83, 4, 0.15);
+	display: flex;
+	flex-direction: column;
+	transition: transform 0.3s ease;
+}
+.card:hover {
+	transform: translateY(-5px);
+}
+.card-img-container {
+	width: 100%;
+	height: 160px;
+	overflow: hidden;
+}
+.card-img-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.5s ease;
+}
+.card-img-container img:hover {
+	transform: scale(1.1);
+}
+.card-content {
+	padding: 15px;
+	text-align: justify;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+.card-content h3 {
+	text-align: left;
+	margin-bottom: 10px;
+}
+.card-content p {
+	font-size: 0.95rem;
+	line-height: 1.4;
+	padding: 0 0 15px 0;
+	flex-grow: 1;
+}
+.btn-comprar {
+	display: inline-block;
+	background-color: rgb(14, 83, 14);
+	color: rgb(243, 253, 227);
+	text-align: center;
+	padding: 10px;
+	text-decoration: none;
+	border-radius: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: auto;
+	transition: background 0.3s;
+}
+.btn-comprar:hover {
+	background-color: rgb(26, 138, 26);
+}
+footer {
+	width: 100%;
+	background: linear-gradient(5deg, rgb(75, 209, 104), rgb(213, 240, 218));
+	color: darkred;
+	text-align: center;
+	padding: 20px;
+	margin-top: 40px;
+	font-weight: bold;
+}
+.registro-body {
+	background: linear-gradient(70deg, darkgreen, lightgreen);
+	min-height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+.registro-container {
+	width: 100%;
+	max-width: 600px;
+}
+.registro-container h2 {
+	color: white;
+	margin-bottom: 20px;
+}
+fieldset {
+	width: 100%;
+	background: linear-gradient(70deg, rgba(144, 238, 144, 0.9), rgba(0, 100, 0, 0.9));
+	border: none;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+.form-group {
+	margin-bottom: 15px;
+	display: flex;
+	flex-direction: column;
+}
+.form-group label {
+	font-weight: bold;
+	margin-bottom: 5px;
+	color: #0b3c1d;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+	width: 100%;
+	padding: 10px;
+	background-color: rgb(207, 255, 135);
+	color: rgb(104, 90, 8);
+	border: 1px solid #a9dfbf;
+	border-radius: 8px;
+	font-size: 1rem;
+}
+.form-group textarea {
+	resize: vertical;
+	height: 80px;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+	background-color: rgb(235, 252, 0);
+	color: rgb(255, 0, 0);
+}
+.form-links {
+	margin: 15px 0;
+}
+.form-links a {
+	color: #fff;
+	text-decoration: underline;
+	font-weight: bold;
+}
+.btn-enviar {
+	cursor: pointer;
+	width: 100%;
+	padding: 12px;
+	background-color: rgb(14, 83, 14);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 1rem;
+	transition: background 0.3s;
+}
+.btn-enviar:hover {
+	background-color: rgb(26, 138, 26);
+}
+@media (max-width: 900px) {
+	.card {
+		width: 45%;
+	}
+	
+	.navbar {
+		flex-direction: column;
+		height: auto;
+		padding: 10px;
+	}
+
+	.nav-links {
+		margin-top: 10px;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+}
+@media (max-width: 600px) {
+	.card {
+		width: 100%;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	fieldset {
+		padding: 15px;
+	}
+}
